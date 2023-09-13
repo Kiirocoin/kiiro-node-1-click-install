@@ -32,7 +32,6 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -61,8 +60,6 @@ Kiirocoin uses KiiroPoW (a ProgPoW variant) as its Proof-of-Work GPU focused alg
 
 If you already completed installation and meet minimum requirements then use the following command to install one click installer:
 <code>git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh</code>
-
-### Installation
 
 <h2 id="getting-started">Getting Started</h2>
 <p>Whether you are hosting with a masternode provider or doing it on your own, ensure you have the latest <a href="https://github.com/Kiirocoin/kiiro/tree/main/" target="_blank">Kiiro wallet</a> and you have already obtained your <strong>1000 KIIRO</strong> (preferably just a bit more to cover fees when you’re transferring around). <strong>Steps 1 and 2 are still required</strong> even if you are going for a masternode provider.</p>
