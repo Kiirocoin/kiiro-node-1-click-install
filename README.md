@@ -20,22 +20,14 @@
   <a href="https://github.com/Kiirocoin/kiiro-node-1-click-install">
     <img src="https://avatars.githubusercontent.com/u/138875999?s=48&v=4" alt="Logo" width="80" height="80">
   </a>
-
   <h3 align="center">KIIROCOIN 1 CLICK MASTERNODE INSTALL</h3>
-
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -63,16 +55,6 @@ Kiirocoin also utilises Dandelion++ to obscure the originating IP of transaction
 Kiirocoin uses KiiroPoW (a ProgPoW variant) as its Proof-of-Work GPU focused algorithm which is FPGA/ASIC resistant.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-* [![Bash]][Bash-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
