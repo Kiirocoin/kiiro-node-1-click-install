@@ -31,6 +31,11 @@ Kiirocoin also utilises Dandelion++ to obscure the originating IP of transaction
 
 Kiirocoin uses KiiroPoW (a ProgPoW variant) as its Proof-of-Work GPU focused algorithm which is FPGA/ASIC resistant.
 
+## What Is a Master Node?
+Master nodes are part of the infrastructure that sustains Kiiro. Unlike regular nodes, master nodes do not add new blocks of transactions to the blockchain. Instead, they verify new blocks and perform special roles in governing the blockchain.
+
+The one click Masternode installer was created to help with expeditious installation and start of Masternodes so all may easily contribute to the security of the blockchain.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
