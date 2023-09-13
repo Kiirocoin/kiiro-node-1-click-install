@@ -60,7 +60,7 @@ Kiirocoin uses KiiroPoW (a ProgPoW variant) as its Proof-of-Work GPU focused alg
 ## Getting Started
 
 If you already completed installation and meet minimum requirements then use the following command to install one click installer:
-git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh
+<code>git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh</code>
 
 ### Installation
 
