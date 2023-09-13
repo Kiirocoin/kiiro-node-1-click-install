@@ -1,27 +1,3 @@
-██   ██ ██ ██ ██████   ██████   ██████  ██████  ██ ███    ██ 
-██  ██  ██ ██ ██   ██ ██    ██ ██      ██    ██ ██ ████   ██ 
-█████   ██ ██ ██████  ██    ██ ██      ██    ██ ██ ██ ██  ██ 
-██  ██  ██ ██ ██   ██ ██    ██ ██      ██    ██ ██ ██  ██ ██ 
-██   ██ ██ ██ ██   ██  ██████   ██████  ██████  ██ ██   ████"
-███    ███  █████  ███████ ████████ ███████ ██████  ███    ██  ██████  ██████  ███████ 
-████  ████ ██   ██ ██         ██    ██      ██   ██ ████   ██ ██    ██ ██   ██ ██      
-██ ████ ██ ███████ ███████    ██    █████   ██████  ██ ██  ██ ██    ██ ██   ██ █████   
-██  ██  ██ ██   ██      ██    ██    ██      ██   ██ ██  ██ ██ ██    ██ ██   ██ ██      
-██      ██ ██   ██ ███████    ██    ███████ ██   ██ ██   ████  ██████  ██████  ███████"
-██ ███    ██ ███████ ████████  █████  ██      ██      ███████ ██████  
-██ ████   ██ ██         ██    ██   ██ ██      ██      ██      ██   ██ 
-██ ██ ██  ██ ███████    ██    ███████ ██      ██      █████   ██████  
-██ ██  ██ ██      ██    ██    ██   ██ ██      ██      ██      ██   ██ 
-██ ██   ████ ███████    ██    ██   ██ ███████ ███████ ███████ ██   ██
-
-
-Prequisites:
-Ubuntu VPS
-ROOT preferable however script may work with a sudo user
-
-To install use the following command:
-git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -101,16 +77,8 @@ Kiirocoin uses KiiroPoW (a ProgPoW variant) as its Proof-of-Work GPU focused alg
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+If you already completed installation and meet minimum requirements then use the following command to install one click installer:
+git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh
 
 ### Installation
 
