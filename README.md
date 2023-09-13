@@ -43,8 +43,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Kiirocoin is a privacy focused cryptocurrency that utilizes zero-knowledge proofs which allows users to destroy coins and then redeem them later for brand new ones with no transaction history.
 
 Kiirocoin also utilises Dandelion++ to obscure the originating IP of transactions without relying on any external services such as Tor/i2P.
