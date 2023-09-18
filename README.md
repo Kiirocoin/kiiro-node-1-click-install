@@ -26,7 +26,7 @@ The one click Masternode installer was created to help with expeditious installa
 ## Getting Started
 
 If you already completed installation and meet minimum requirements then use the following command to install one click installer:
-<code>git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash install.sh</code>
+<code>git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash kiiro-node-1-click-install/install.sh</code>
 
 <p>Whether you are hosting with a masternode provider or doing it on your own, ensure you have the latest <a href="https://github.com/Kiirocoin/kiiro/tree/main/" target="_blank">Kiiro wallet</a> and you have already obtained your <strong>1000 KIIRO</strong> (preferably just a bit more to cover fees when you’re transferring around). <strong>Steps 1 and 2 are still required</strong> even if you are going for a masternode provider.</p>
 <h3 id="step-1-encrypt-and-backup-your-wallet-on-your-desktop-wallet">Step 1: Encrypt and Backup your wallet on your Desktop wallet</h3>
