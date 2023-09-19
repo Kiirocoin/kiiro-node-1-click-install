@@ -126,7 +126,7 @@ sudo systemctl enable kiirocoind
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Configuring and Enabling Firewall${hr}"
-sudo apt install -y ufw && sudo ufw allow ssh/tcp && sudo ufw limit ssh/tcp && sudo ufw allow 8999/tcp && sudo ufw logging on && sudo ufw --force enable
+#sudo apt install -y ufw && sudo ufw allow ssh/tcp && sudo ufw limit ssh/tcp && sudo ufw allow 8999/tcp && sudo ufw logging on && sudo ufw --force enable
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Creating directory for Masternode files${hr}"
