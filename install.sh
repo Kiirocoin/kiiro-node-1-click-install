@@ -42,7 +42,7 @@ printf "Please enter BLS generated Secret: \n"
 read blsSecret
 length=`expr length ${blsSecret//[[:blank:]]/}`;
 if [ $length != 64 ];
-then printf "\n\nblsSecret is not valid. Please restart script and enter a valid blsSecret.\n\n";exit;fi;
+then printf "\n\nblsSecret is not valid. Please restart script ( sudo bash kiiro-node-1-click-install/install.sh ) and enter a valid blsSecret.\n\n";exit;fi;
 printf "${hr}Updating & Installing unzip${hr}"
 sudo apt update && sudo apt-get install unzip -f
 printf "Downloading ubuntu-18 Kiiro wallet"
