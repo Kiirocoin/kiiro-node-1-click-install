@@ -182,10 +182,10 @@ sudo rm kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoin-qt && sudo rm kii
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Install of Masternode is complete.\n\n"
-printf "Starting Masternode and waiting 60 seconds\n\n"
+printf "Starting Masternode and waiting 10 seconds\n\n"
 #kiirocoind -daemon
 sudo systemctl start kiirocoind
-sleep 60
+sleep 10
 printf "Running kiirocoin-cli evoznode status\n\n"
 kiirocoin-cli evoznode status
 printf "\n\nIf you do not see ready then run the following command again in 30 minutes:\n\n"
