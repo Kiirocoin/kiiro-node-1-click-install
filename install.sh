@@ -46,7 +46,7 @@ then printf "\n\nblsSecret is not valid. Please restart script and enter a valid
 printf "${hr}Updating & Installing unzip${hr}"
 sudo apt update && sudo apt-get install unzip -f
 printf "Downloading ubuntu-18 Kiiro wallet"
-sudo rm -f ubuntu-18.zip && wget github.com/Kiirocoin/kiiro/releases/download/v1.0.0.4/kiirocoin-1.0.0.4-linux-18.04.zip
+sudo rm -f kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoind && sudo rm kiirocoin-cli && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx && wget github.com/Kiirocoin/kiiro/releases/download/v1.0.0.4/kiirocoin-1.0.0.4-linux-18.04.zip
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Unzipping${hr}"
@@ -159,7 +159,7 @@ EOT
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Removing old files${hr}"
-sudo rm -rd ubuntu-18 && sudo rm ubuntu-18.zip*
+sudo rm kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoind && sudo rm kiirocoin-cli && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Install of Masternode is complete.\n\n"
