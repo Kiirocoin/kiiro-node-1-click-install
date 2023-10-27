@@ -189,7 +189,7 @@ sleep 15
 printf "Running kiirocoin-cli evoznode status\n\n"
 kiirocoin-cli evoznode status
 printf "\n\nIf you do not see ready then run the following command again in 30 minutes:\n\n"
-printf "kiirocoin-cli evoznode status\n\n"
+printf "sudo kiirocoin-cli evoznode status\n\n"
 printf "If you are receiving an error, you may have not properly registered Masternode or entered wrong information in beginning of install script\n\n"
 printf "Reach out to us on Discord if you need any help\n\n"
 printf "https://discord.gg/g88D2RP9\n\n"
