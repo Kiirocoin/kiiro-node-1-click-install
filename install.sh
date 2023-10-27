@@ -46,15 +46,15 @@ then printf "\n\nblsSecret is not valid. Please restart script and enter a valid
 printf "${hr}Updating & Installing unzip${hr}"
 sudo apt update && sudo apt-get install unzip -f
 printf "Downloading ubuntu-18 Kiiro wallet"
-sudo rm -f ubuntu-18.zip && wget github.com/Kiirocoin/kiiro/releases/download/v1.0.0.4/kiirocoin-1.0.0.4-linux-18.04.zip -o ubuntu-18.zip
+sudo rm -f ubuntu-18.zip && wget github.com/Kiirocoin/kiiro/releases/download/v1.0.0.4/kiirocoin-1.0.0.4-linux-18.04.zip
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Unzipping${hr}"
-unzip -o ubuntu-18.zip
+unzip -o kiirocoin-1.0.0.4-linux-18.04.zip
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Moving files to /usr/bin${hr}"
-sudo mv -f ubuntu-18/kiirocoin-cli /usr/bin && sudo mv -f ubuntu-18/kiirocoind /usr/bin
+sudo mv -f kiirocoin-cli /usr/bin && sudo mv -f kiirocoind /usr/bin
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Chmod files as executable${hr}"
