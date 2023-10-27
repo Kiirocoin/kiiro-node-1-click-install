@@ -78,7 +78,9 @@ printf "${hr}Done${hr}"
 banner
 printf "${hr}Creating kiirocoind service file${hr}"
 sudo systemctl disable kiirocoind
-sudo rm /etc/systemd/system/kiirocoind.service
+if [ -f /etc/systemd/system/kiirocoind.service ] ; then
+    sudo rm /etc/systemd/system/kiirocoind.service
+fi
 rpcuser=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 rpcpassword=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 
@@ -149,7 +151,9 @@ mkdir -p /root/.kiirocoin
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Making kiirocoin.conf file${hr}"
-sudo rm /root/.kiirocoin/kiirocoin.conf
+if [ -f /root/.kiirocoin/kiirocoin.conf ] ; then
+    sudo rm /root/.kiirocoin/kiirocoin.conf
+fi
 rpcuser=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 rpcpassword=`tr -dc A-Za-z0-9 </dev/urandom | head -c 12`
 cat <<EOT > /root/.kiirocoin/kiirocoin.conf
@@ -174,7 +178,7 @@ EOT
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Removing old files${hr}"
-sudo rm kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoind && sudo rm kiirocoin-cli && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
+sudo rm kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Install of Masternode is complete.\n\n"
