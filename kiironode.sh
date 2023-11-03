@@ -202,6 +202,18 @@ is_command() {
     command -v "${check_command}" >/dev/null 2>&1
 }
 
+# Tell the user where this script is running from
+where_are_we() {
+    if [ "$KIIRO_RUN_LOCATION" = "local" ]; then
+        printf "%b KiiroNode is running locally.\\n" "${INFO}"
+        printf "\\n"
+    fi
+    if [ "$KIIRO_RUN_LOCATION" = "remote" ]; then
+        printf "%b KiiroNode is running remotely.\\n" "${INFO}"
+        printf "\\n"
+    fi
+}
+
 # Function to install masternode
 install_masternode() {
     banner
@@ -1548,7 +1560,7 @@ display_dashboard() {
     pre_loop
     EXIT_DASHBOARD=false
     while :; do
-        # Quit Dashboard automatically based on the time set in diginode.settings
+        # Quit Dashboard automatically based on the time set in kiironode.settings
         # Dashboard will run indefinitely if the value is set to 0
 
         # First convert SM_AUTO_QUIT from minutes into seconds
@@ -1686,6 +1698,15 @@ display_dashboard() {
             if [ $KIIRO_CONNECTIONS -ge 9 ]; then
                 KIIRO_CONNECTIONS_MSG="Maximum: $KIIRO_MAX_CONNECTIONS"
             fi
+
+            # Get primary kiirocoind Node Uptime
+            #kiiro_uptime_seconds=$($KIIRO_CLI uptime 2>/dev/null)
+            #kiiro_uptime=$(eval "echo $(date -ud "@$kiiro_uptime_seconds" +'$((%s/3600/24)) days %H hours %M minutes %S seconds')")
+
+            # Calculate when it was first online
+            #current_time=$(date +"%s")
+            #kiiro_start_time=$((current_time - kiiro_uptime_seconds))
+            #kiiro_online_since=$(date -d "@$kiiro_start_time" +"%H:%M %d %b %Y %Z")
 
         fi
 
@@ -2037,6 +2058,8 @@ display_dashboard() {
             col_width_kiiro_version=$((term_width - 38 - 3 - 1))
             col_width_kiiro_version_long=$((term_width - 38 - 3 - 1 + 11))
             col_width_kiiro_startingup=$((term_width - 38 - 14 - 3 - 2 + 11))
+            col_width_kiiro_uptime=$((term_width - 38 - 3 - 1)) 
+            col_width_kiiro_uptime_long=$((term_width - 38 - 39 - 3 - 2)) 
 
             col_width_software_wide=$((term_width - 21 - 50 - 2))
             col_width_software=$((term_width - 21 - 35 - 3 + 4))
@@ -2199,6 +2222,12 @@ display_dashboard() {
                 echo "$sm_row_02_mainnet" # "║" "(MAINNET)" "╠" "═" "╬" "═" "╣"
                 printf " ║                ║   BLOCK HEIGHT ║  " && printf "%-${col_width_kiiro_blockheight}s %19s %-3s\n" "$KIIRO_BLOCKCOUNT_FORMATTED Blocks" "[ Synced: $KIIRO_BLOCKSYNC_PERC% ]" " ║ "
                 echo "$sm_row_04" # "║" " " "╠" "═" "╬" "═" "╣"
+                # if [ $term_width -gt 121 ]; then 
+                #     printf " ║                ║    NODE UPTIME ║  " && printf "%-${col_width_kiiro_uptime_long}s %19s %-3s\n" "$kiiro_uptime" "[ Online Since: $kiiro_online_since ]" " ║ "
+                # else
+                #     printf " ║                ║    NODE UPTIME ║  " && printf "%-${col_width_kiiro_uptime}s %-3s\n" "$kiiro_uptime" " ║ "
+                # fi
+                # echo "$sm_row_04" # "║" " " "╠" "═" "╬" "═" "╣"
                 printf " ║                ║          PORTS ║  " && printf "%-${col_width_kiiro_ports}s %-3s\n" "Listening Port: ${KIIRO_LISTEN_PORT}   RPC Port: $kiiro_rpcport_display" " ║ "
                 echo "$sm_row_04" # "║" " " "╠" "═" "╬" "═" "╣"
                 if [ "$KIIRO_CURRENT_VERSION" != "$KIIRO_LATEST_VERSION" ]; then
@@ -2446,9 +2475,16 @@ main_menu() {
         if is_command sudo; then
             printf "%b%b Sudo utility check\\n" "${OVER}" "${TICK}"
 
-            # when run via calling local bash script
-            printf "%b Re-running KiiroNode Setup as root...\\n" "${INFO}"
-            exec sudo bash "$0" --runlocal "$@"
+            # when run via curl piping
+            if [[ "$0" == "bash" ]]; then
+                printf "%b Re-running KiiroNode URL as root...\\n" "${INFO}"
+                # Download the install script and run it with admin rights
+                exec curl -sSL $KIIRO_SETUP_URL | sudo bash -s -- --runremote "$@" 
+            else
+                # when run via calling local bash script
+                printf "%b Re-running KiiroNode as root...\\n" "${INFO}"
+                exec sudo bash "$0" --runlocal "$@"
+            fi
             exit $?
         else
             # Otherwise, tell the user they need to run the script as root, and bail
@@ -2463,6 +2499,10 @@ main_menu() {
     echo ""
     printf "%b Checking for / installing required dependencies for KiiroNode Setup...\\n" "${INFO}"
     install_dependent_packages "${SETUP_DEPS[@]}"
+    set_sys_variables           # Set various system variables once we know we are on linux
+    kiironode_import_settings   # Create kiironode.settings file (if it does not exist)
+    kiironode_create_settings   # Create kiiroinode.settings file (if it does not exist)
+    is_kiironode_installed      # Run checks to see if Kiirocoin Node is present. Exit if it isn't. Import kiirocoin.conf.
 
     printf " =============== INSTALL MENU ==========================================\\n\\n"
     # ==============================================================================
@@ -2479,8 +2519,23 @@ main_menu() {
     opt4a="Display Dashboard "
     opt4b=" Display your Masternode Dashboard."
 
+    KIIRO_CURRENT_VERSION=$KIIRO_LATEST_VERSION
+    if [ $KIIRO_STATUS != "not_detected" ]; then
+        KIIRO_CURRENT_VERSION=$($KIIRO_CLI -version 2>/dev/null | cut -d ' ' -f6 | cut -d '-' -f1)
+    fi
+
+    if [ $KIIRO_STATUS != "not_detected" ] && [ "$KIIRO_CURRENT_VERSION" != "$KIIRO_LATEST_VERSION" ]; then
+        KIIRO_MENU_MESSAGE="You are running version $KIIRO_CURRENT_VERSION of Kiirocoin Core on this machine, you can upgrade to version $KIIRO_LATEST_VERSION."
+    elif [ $KIIRO_STATUS = "not_detected" ]; then
+        KIIRO_MENU_MESSAGE="Select 'Setup Masternode' to install $KIIRO_LATEST_VERSION of Kiirocoin Core. Please have your BLS private key handy."
+    elif [ $KIIRO_STATUS != "not_detected" ] && [ "$KIIRO_CURRENT_VERSION" = "$KIIRO_LATEST_VERSION" ]; then
+        KIIRO_MENU_MESSAGE="You are already running the latest version of Kiirocoin Core. You can check your Masternode status with the 'Display Dashboard' selection."
+    else
+        KIIRO_MENU_MESSAGE="If you already have a Kiirocoin Node on this machine, you can upgrade to the latest version."
+    fi
+
     # Display the information to the user
-    UpdateCmd=$(whiptail --title "KiiroNode Setup - Main Menu" --menu "\\nPlease choose what to install. \\n\\nIf you already have a Kiirocoin Node on this machine, you can upgrade to the latest version.\\n\\n\\n\\nPlease choose an option:\\n\\n" --cancel-button "Exit" "${r}" 80 4 \
+    UpdateCmd=$(whiptail --title "KiiroNode - Main Menu" --menu "\\n\\n$KIIRO_MENU_MESSAGE\\n\\nPlease choose an option:\\n" --cancel-button "Exit" 18 70 4 \
         "${opt1a}" "${opt1b}" \
         "${opt2a}" "${opt2b}" \
         "${opt3a}" "${opt3b}" \
@@ -2519,5 +2574,7 @@ main_menu() {
 while true; do
     banner
     main_menu
-    read -p "Press Enter to continue..."
+    if [ "$UpdateCmd" != "$opt4a" ]; then
+        read -p "Press Enter to continue..."
+    fi
 done
