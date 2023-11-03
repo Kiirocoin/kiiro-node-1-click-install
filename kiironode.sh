@@ -109,6 +109,7 @@ c=70
 
 # GitHub Release: (do not change these)
 KIIRO_GITHUB_URL=https://github.com/Kiirocoin/kiiro/releases/download/v1.0.0.4/kiirocoin-1.0.0.4-linux-18.04.zip
+KIIRONODE_URL=https://raw.githubusercontent.com/kiirodev/kiiro-node-1-click-install/feature/kiironode/kiironode.sh
 
 # SYSTEM SERVICE FILES: (do not change these)
 KIIRO_SYSTEMD_SERVICE_FILE=/etc/systemd/system/kiirocoind.service
@@ -2479,7 +2480,7 @@ main_menu() {
             if [[ "$0" == "bash" ]]; then
                 printf "%b Re-running KiiroNode URL as root...\\n" "${INFO}"
                 # Download the install script and run it with admin rights
-                exec curl -sSL $KIIRO_SETUP_URL | sudo bash -s -- --runremote "$@" 
+                exec curl -sSL $KIIRONODE_URL | sudo bash -s -- --runremote "$@" 
             else
                 # when run via calling local bash script
                 printf "%b Re-running KiiroNode as root...\\n" "${INFO}"
