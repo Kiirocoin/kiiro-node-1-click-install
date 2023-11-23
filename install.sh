@@ -139,7 +139,7 @@ EOF
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Enabling kiirocoind service${hr}"
-sudo systemctl enable kiirocoind
+sudo systemctl enable kiirocoind.service
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Configuring and Enabling Firewall${hr}"
@@ -184,7 +184,7 @@ banner
 printf "${hr}Install of Masternode is complete.\n\n"
 printf "Starting Masternode and waiting 10 seconds\n\n"
 #kiirocoind -daemon
-sudo systemctl start kiirocoind
+sudo systemctl start kiirocoind.service
 sleep 10
 printf "Running kiirocoin-cli evoznode status\n\n"
 kiirocoin-cli evoznode status
