@@ -34,7 +34,7 @@ if [ "$EUID" -ne 0 ]
 fi
 banner
 printf "${hr}"
-vpsIp=`hostname -I`
+vpsIp=`hostname -I | awk '{print $1}'`
 
 printf "Your VPS IP = ${vpsIp}\n\n"
 printf "If your VPS IP is not correct or is blank, please contact Kiirocoin Support team for assistance with editing kiirocoin.conf after this install\n\n"
