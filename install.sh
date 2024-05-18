@@ -178,7 +178,7 @@ EOT
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Removing old files${hr}"
-sudo rm kiirocoin-1.0.0.4-linux-18.04.zip && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
+sudo rm kiirocoin-1.0.0.5-linux-18.04.zip && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Install of Masternode is complete.\n\n"
