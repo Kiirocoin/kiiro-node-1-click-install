@@ -35,21 +35,21 @@ If you already completed installation and meet minimum requirements then use the
 <p>After you have encrypted your wallet, it is also recommended to do a backup via <strong>File &gt; Backup Wallet</strong>. It is recommended to store this wallet on a separate physical drive or pen drive. The wallet.dat is encrypted so even if the wallet.dat is exposed, if your password is long enough, it will be secure.</p>
 <p><strong>Please don’t forget your password! No one can help you if you lose your password.</strong></p>
 <h3 id="step-2-collateral-your-1000-kiiro-on-your-desktop-wallet">Step 2: collateral your 1000 KIIRO on your Desktop wallet</h3>
-<p>Your collateral address is where you will be storing your 1000 KIIRO.</p>
+<p>Your collateral address is where you will be storing your 20000 KIIRO.</p>
 <p>You can create the collateral address in two ways: using the Receive tab, OR in the Debug Window</p>
 <h4 id="receive-tab">Receive tab:</h4>
 <p>Click on the Receive tab. Enter a label for your collateral address in the Label field and click on Request Payment. A window should pop up with a Kiiro address.</p>
 <h4 id="debug-window">Debug Window:</h4>
 <p>Go to Help &gt; Debug Window &gt; Console and type in</p>
 <p><code class="language-plaintext highlighter-rouge">getnewaddress</code></p>
-<p>In one single transaction, send <strong>exactly 1000 KIIRO</strong> into the masternode collateral address that you created. Do not send 500 and then another 500. <strong>It has to be in one single transaction. Do not tick subtract fee from amount.</strong></p>
-<p>It is not recommended to send it direct from an exchange as they might deduct certain withdrawal fees resulting in less than 1000 KIIRO in that transfer.</p>
+<p>In one single transaction, send <strong>exactly 20000 KIIRO</strong> into the masternode collateral address that you created. Do not send 500 and then another 500. <strong>It has to be in one single transaction. Do not tick subtract fee from amount.</strong></p>
+<p>It is not recommended to send it direct from an exchange as they might deduct certain withdrawal fees resulting in less than 20000 KIIRO in that transfer.</p>
 <p>Wait <strong>1 confirmation</strong> for this transaction to be valid as your masternode collateral. When done correctly, the transaction id and transaction index will appear when you execute this command in the Debug Console:</p>
 <p><code class="language-plaintext highlighter-rouge">evoznode outputs</code></p>
 <h4 id="special-notes-only-for-those-who-are-creating-more-than-one-masternode">Special Notes only for those who are creating more than one masternode:</h4>
-<p>If you are doing more than one masternode, special care is required to ensure that you are creating collaterals properly. You do not want to break the previous 1000 KIIRO collateral you just made by taking funds from that collateral.</p>
-<p>To do this, on your <strong>local desktop wallet</strong> turn on coin control by going to <strong>Settings &gt; Options &gt; Wallet</strong> and click on <strong>Enable coin control features.</strong> This will enable control of which funds you are using when making your next 1000 KIIRO collateral.</p>
-<p>Then go to your Send tab, and you will see <strong>Coin Control Features</strong>. Click on <strong>Inputs</strong>. You should see your 1000 KIIRO collateral there. Right click and click <strong>Lock Unspent</strong>. This means that when making your new collateral, your wallet will not touch these funds.</p>
+<p>If you are doing more than one masternode, special care is required to ensure that you are creating collaterals properly. You do not want to break the previous 20000 KIIRO collateral you just made by taking funds from that collateral.</p>
+<p>To do this, on your <strong>local desktop wallet</strong> turn on coin control by going to <strong>Settings &gt; Options &gt; Wallet</strong> and click on <strong>Enable coin control features.</strong> This will enable control of which funds you are using when making your next 20000 KIIRO collateral.</p>
+<p>Then go to your Send tab, and you will see <strong>Coin Control Features</strong>. Click on <strong>Inputs</strong>. You should see your 20000 KIIRO collateral there. Right click and click <strong>Lock Unspent</strong>. This means that when making your new collateral, your wallet will not touch these funds.</p>
 <p>Once you have done this, you can make the next 1000 KIIRO collateral for your next masternode. Repeat this everytime you have made a new masternode.</p>
 <p>You can always verify you’re doing this correctly by going into <strong>Help &gt; Debug Window</strong> and typing <strong>evoznode outputs</strong> which would display all masternode capable collaterals.</p>
 <h3 id="step-3-creating-owneraddress-payoutaddress-feesourceaddress-and-operatorkeyoperatorpubkey">Step 3: Creating ownerAddress, payoutAddress, feeSourceAddress and operatorKey/operatorPubKey</h3>
