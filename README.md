@@ -28,13 +28,13 @@ The one click Masternode installer was created to help with expeditious installa
 If you already completed installation and meet minimum requirements then use the following command to install one click installer:
 <code>git clone https://github.com/Kiirocoin/kiiro-node-1-click-install.git && sudo bash kiiro-node-1-click-install/install.sh</code>
 
-<p>Whether you are hosting with a masternode provider or doing it on your own, ensure you have the latest <a href="https://github.com/Kiirocoin/kiiro/tree/main/" target="_blank">Kiiro wallet</a> and you have already obtained your <strong>1000 KIIRO</strong> (preferably just a bit more to cover fees when you’re transferring around). <strong>Steps 1 and 2 are still required</strong> even if you are going for a masternode provider.</p>
+<p>Whether you are hosting with a masternode provider or doing it on your own, ensure you have the latest <a href="https://github.com/Kiirocoin/kiiro/tree/main/" target="_blank">Kiiro wallet</a> and you have already obtained your <strong>20000 KIIRO</strong> (preferably just a bit more to cover fees when you’re transferring around). <strong>Steps 1 and 2 are still required</strong> even if you are going for a masternode provider.</p>
 <h3 id="step-1-encrypt-and-backup-your-wallet-on-your-desktop-wallet">Step 1: Encrypt and Backup your wallet on your Desktop wallet</h3>
 <p>If you haven’t done so already, make sure you encrypt your wallet on your <strong>local desktop wallet</strong> (PC/Mac/Linux).</p>
 <p>Go to <strong>Settings &gt; Encrypt Wallet.</strong></p>
 <p>After you have encrypted your wallet, it is also recommended to do a backup via <strong>File &gt; Backup Wallet</strong>. It is recommended to store this wallet on a separate physical drive or pen drive. The wallet.dat is encrypted so even if the wallet.dat is exposed, if your password is long enough, it will be secure.</p>
 <p><strong>Please don’t forget your password! No one can help you if you lose your password.</strong></p>
-<h3 id="step-2-collateral-your-1000-kiiro-on-your-desktop-wallet">Step 2: collateral your 1000 KIIRO on your Desktop wallet</h3>
+<h3 id="step-2-collateral-your-20000-kiiro-on-your-desktop-wallet">Step 2: collateral your 1000 KIIRO on your Desktop wallet</h3>
 <p>Your collateral address is where you will be storing your 20000 KIIRO.</p>
 <p>You can create the collateral address in two ways: using the Receive tab, OR in the Debug Window</p>
 <h4 id="receive-tab">Receive tab:</h4>
