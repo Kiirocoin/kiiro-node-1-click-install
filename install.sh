@@ -68,6 +68,10 @@ printf "${hr}Unzipping${hr}"
 unzip -o kiirocoin-1.0.0.6-linux-18.04.zip
 printf "${hr}Done${hr}"
 banner
+printf "${hr}Select directory kiirocoin-1.0.0.6-linux-18.04${hr}"
+cd kiirocoin-1.0.0.6-linux-18.04
+printf "${hr}Done${hr}"
+banner
 printf "${hr}Moving files to /usr/bin${hr}"
 sudo mv -f kiirocoin-cli /usr/bin && sudo mv -f kiirocoind /usr/bin
 printf "${hr}Done${hr}"
