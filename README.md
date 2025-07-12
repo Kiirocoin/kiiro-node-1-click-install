@@ -34,7 +34,7 @@ If you already completed installation and meet minimum requirements then use the
 <p>Go to <strong>Settings &gt; Encrypt Wallet.</strong></p>
 <p>After you have encrypted your wallet, it is also recommended to do a backup via <strong>File &gt; Backup Wallet</strong>. It is recommended to store this wallet on a separate physical drive or pen drive. The wallet.dat is encrypted so even if the wallet.dat is exposed, if your password is long enough, it will be secure.</p>
 <p><strong>Please don’t forget your password! No one can help you if you lose your password.</strong></p>
-<h3 id="step-2-collateral-your-20000-kiiro-on-your-desktop-wallet">Step 2: collateral your 1000 KIIRO on your Desktop wallet</h3>
+<h3 id="step-2-collateral-your-20000-kiiro-on-your-desktop-wallet">Step 2: collateral your 20000 KIIRO on your Desktop wallet</h3>
 <p>Your collateral address is where you will be storing your 20000 KIIRO.</p>
 <p>You can create the collateral address in two ways: using the Receive tab, OR in the Debug Window</p>
 <h4 id="receive-tab">Receive tab:</h4>
