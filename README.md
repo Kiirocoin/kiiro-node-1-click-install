@@ -84,7 +84,7 @@ If you already completed installation and meet minimum requirements then use the
 </ul>
 <p><strong>Note:</strong> With KiiroPoW, the blockchain grows at a rate of about 1 GB per year. Please make sure you pick a VPS with sufficient disk space.</p>
 <p>When choosing a server, please remember reliability is more important than price. If your masternode goes offline, you will potentially miss out on payouts which would be more than your VPS cost.</p>
-<p>Pick <strong>Ubuntu 20.04 64-bit</strong> and install it.</p>
+<p>Pick <strong>Ubuntu 22.04 64-bit</strong> and install it.</p>
 <p>Once it is done, the VPS provider should give you a username (usually root) and a password. Use a SSH client like <a href="https://www.putty.org/">Putty</a> or if the VPS provider provides, it open up a console window.</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- USAGE EXAMPLES -->
