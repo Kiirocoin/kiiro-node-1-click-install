@@ -46,8 +46,8 @@ then printf "\n\nblsSecret is not valid. Please restart script ( sudo bash kiiro
 printf "${hr}Updating & Installing unzip${hr}"
 sudo apt update && sudo apt-get install unzip -f
 printf "Downloading ubuntu-18 Kiiro wallet"
-if [ -f kiirocoin-1.0.0.6-linux-18.04.zip ] ; then
-    sudo rm kiirocoin-1.0.0.6-linux-18.04.zip
+if [ -f kiirocoin-1.0.0.7-linux-22.02.zip ] ; then
+    sudo rm kiirocoin-1.0.0.7-linux-22.02.zip
 fi
 if [ -f kiirocoind ] ; then
     sudo rm kiirocoind
@@ -61,15 +61,15 @@ fi
 if [ -f kiirocoin-tx ] ; then
     sudo rm kiirocoin-tx
 fi
-wget github.com/Kiirocoin/kiiro/releases/download/v1.0.0.6/kiirocoin-1.0.0.6-linux-18.04.zip
+wget https://github.com/Kiirocoin/kiiro/releases/download/v.1.0.0.7/kiirocoin-1.0.0.7-linux-22.02.zip
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Unzipping${hr}"
-unzip -o kiirocoin-1.0.0.6-linux-18.04.zip
+unzip -o kiirocoin-1.0.0.7-linux-22.02.zip
 printf "${hr}Done${hr}"
 banner
-printf "${hr}Select directory kiirocoin-1.0.0.6-linux-18.04${hr}"
-cd kiirocoin-1.0.0.6-linux-18.04
+printf "${hr}Select directory kiirocoin-1.0.0.7-linux-22.02${hr}"
+cd kiirocoin-1.0.0.7-linux-22.02
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Moving files to /usr/bin${hr}"
@@ -182,7 +182,7 @@ EOT
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Removing old files${hr}"
-sudo rm kiirocoin-1.0.0.6-linux-18.04.zip && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
+sudo rm kiirocoin-1.0.0.7-linux-22.02.zip && sudo rm kiirocoin-qt && sudo rm kiirocoin-tx
 printf "${hr}Done${hr}"
 banner
 printf "${hr}Install of Masternode is complete.\n\n"
